@@ -1,8 +1,27 @@
-# Flood It
-- A Game where you have to flood the board with one color at the end before you run out of moves.
-- Click on a square to "flood" the board with that color's square. 
-- Press "r" to reset the board/game
-- Press "c" to change the number of colors in the game, which would restart the game with the new number of colors in the game. (3-8 colors)
-- Press "s" to change the size of the board, which would restart the game with the new size of the board. (sizes: 9, 10, 14, 20, 22, 24, 28)
-- Press "h" to enable hints, where the computer finds the best color to click next to win with the fewest number of moves using the greedy approach.
-- The hints are only available for game board sizes of 10 or less, and the # of colors being 5 or less due to time and space complexity.
+# Flood-It (Java / Swing)
+
+Flood-It is a puzzle game where the objective is to flood the entire board to a single color before running out of moves. On each turn, the player selects a color, and the flooded region expands to adjacent cells of that color.
+
+## Controls
+- Click a square to flood the board with that color
+- **R** — reset the game
+- **C** — change the number of colors (restarts game; 3–8)
+- **S** — change the board size (restarts game; 9, 10, 14, 20, 22, 24, 28)
+- **H** — toggle hints (the color will be outlined in white)
+
+## Implementation
+- The board is represented as a grid of `Cell` objects. Each cell stores its color, flooded state, and references to its adjacent neighbors.
+- Flood expansion works by repeatedly checking neighboring cells and marking them as flooded when their color matches the current flood color.
+
+### Hint System (Greedy Approach)
+- When enabled, the hint system gets all of the possible next colors and chooses the one that would flood the most new cells.
+- This is done by internally simulating flood expansion from the current flooded region and counting how many additional cells would be captured.
+- To avoid performance issues, hints are only available for board sizes of 10 or fewer and color counts of 5 or fewer.
+
+## How to Run
+
+### Windows (PowerShell)
+From the project root:
+```powershell
+java src.FloodIt
+```
