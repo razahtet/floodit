@@ -1,4 +1,4 @@
-# Flood-It (Java / Swing)
+# Flood-It (Java)
 
 Flood-It is a puzzle game where the objective is to flood the entire board to a single color before running out of moves. On each turn, the player selects a color, and the flooded region expands to adjacent cells of that color.
 
